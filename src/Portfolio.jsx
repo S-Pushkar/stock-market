@@ -8,7 +8,7 @@ export default function Portfolio() {
     }, [currentPage]);
     return (
         <>
-            <h1 className="text-[rgb(77,126,212)]">PORTFOLIO</h1>
+            <h1 className="text-[rgb(212,195,87)] text-sm lg:text-lg font-bold">PORTFOLIO</h1>
         </>
     );
 }

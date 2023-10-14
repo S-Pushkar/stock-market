@@ -13,15 +13,15 @@ function App() {
 	const [currentPage, setCurrentPage] = useState('Home');
 	return (
 		<PageContext.Provider value={{log, setLog, currentPage, setCurrentPage}}>
-			<div className='min-h-screen flex flex-col'>
-				<header>
+			<div className='min-h-screen flex flex-col justify-center'>
+				<header className='flex flex-col justify-center'>
 					<h1 className='text-[rgb(77,212,106)] text-center font-bold'>Stocks</h1>
-					<nav className='flex justify-end'>
-						<Link className={currentPage == 'Home' ? 'ml-8 mr-8 underline' : 'ml-8 mr-8'} to="/">Home</Link>
-						<Link className={currentPage == 'Portfolio' ? 'ml-8 mr-8 underline' : 'ml-8 mr-8'} to="/portfolio">Portfolio</Link>
-						<Link className={currentPage == 'Signup' ? 'ml-8 mr-8 underline' : 'ml-8 mr-8'} to="/sign-up">{log}</Link>
+					<nav className='flex justify-between my-8 mx-4 lg:p-4 p-0'>
+						<Link className={currentPage == 'Home' ? ' underline' : ''} to="/">Home</Link>
+						<Link className={currentPage == 'Portfolio' ? ' underline' : ''} to="/portfolio">Portfolio</Link>
+						<Link className={currentPage == 'Signup' ? ' underline' : ''} to="/sign-up">{log}</Link>
 					</nav>
-					<hr className='mt-8 mb-8' />
+					<hr className='mb-8' />
 				</header>
 
 				<main className='flex-grow'>

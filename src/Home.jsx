@@ -8,7 +8,7 @@ export default function Home() {
     }, [currentPage]);    
     return (
         <>
-            <h1 className="text-[rgb(77,126,212)]">HOME</h1>
+            <h1 className="text-[rgb(212,195,87)] text-sm lg:text-lg font-bold">HOME</h1>
         </>
     );
 }
