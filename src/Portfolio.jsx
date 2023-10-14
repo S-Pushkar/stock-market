@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import {PageContext} from './App';
 
-export default function About() {
+export default function Portfolio() {
     const {log, setLog, currentPage, setCurrentPage} = useContext(PageContext);
     useEffect(() => {
-        setCurrentPage('About');
+        setCurrentPage('Portfolio');
     }, [currentPage]);
     return (
         <>
-            <h1 className="text-[rgb(77,126,212)]">ABOUT</h1>
+            <h1 className="text-[rgb(77,126,212)]">PORTFOLIO</h1>
         </>
     );
 }
