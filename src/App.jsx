@@ -9,7 +9,7 @@ import Signup from './Signup';
 const PageContext = createContext();
 
 function App() {
-	const [log, setLog] = useState('Sign Up');
+	const [log, setLog] = useState('Signup');
 	const [currentPage, setCurrentPage] = useState('Home');
 	return (
 		<PageContext.Provider value={{log, setLog, currentPage, setCurrentPage}}>
