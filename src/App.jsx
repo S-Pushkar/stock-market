@@ -2,6 +2,7 @@ import {Link, Routes, Route} from 'react-router-dom';
 import { createContext, useState } from 'react';
 import './App.css';
 import Home from './Home';
+import Invest from './Invest'
 import Portfolio from './Portfolio';
 import About from './About';
 import Signup from './Signup';
@@ -14,19 +15,30 @@ function App() {
 	return (
 		<PageContext.Provider value={{log, setLog, currentPage, setCurrentPage}}>
 			<div className='min-h-screen flex flex-col justify-center'>
-				<header className='flex flex-col justify-center'>
-					<h1 className='text-[rgb(77,212,106)] text-center font-bold'>Stocks</h1>
-					<nav className='flex justify-between my-8 mx-4 lg:p-4 p-0'>
-						<Link className={currentPage == 'Home' ? ' underline' : ''} to="/">Home</Link>
-						<Link className={currentPage == 'Portfolio' ? ' underline' : ''} to="/portfolio">Portfolio</Link>
-						<Link className={currentPage == 'Signup' ? ' underline' : ''} to="/sign-up">{log}</Link>
+				<header className='sticky top-0 flex flex-col justify-center bg-[#000000]'>
+					<Link to="/">
+						<h1 className='text-[rgb(77,212,106)] text-s lg:text-3xl text-center font-bold'>Stocks</h1>
+					</Link>
+					<nav className='flex flex-wrap flex-shrink-10 items-center justify-between md:justify-start lg:justify-start my-4 mx-4 lg:p-4 p-0'>
+						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
+							<Link className={currentPage == 'Home' ? 'sm:text-xs lg:text-lg underline text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/">Home</Link>
+						</div>
+						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
+							<Link className={currentPage == 'Invest' ? 'sm:text-xs lg:text-lg underline text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/invest">Invest</Link>
+						</div>
+						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
+							<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg underline text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">Portfolio</Link>
+						</div>
+						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
+							<Link className={currentPage == 'Signup' ? 'sm:text-xs lg:text-lg underline text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/sign-up">{log}</Link>
+						</div>
 					</nav>
-					<hr className='mb-8' />
+					<hr />
 				</header>
-
 				<main className='flex-grow'>
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route path="/invest" element={<Invest />} />
 						<Route path="/portfolio" element={<Portfolio />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/sign-up" element={<Signup />} />
@@ -35,7 +47,7 @@ function App() {
 
 				<hr className='mt-8 mb-8' />
 				<footer className='flex justify-start'>
-					<Link className={currentPage == 'About' ? 'ml-8 mr-8 underline' : 'ml-8 mr-8'} to="/about">About</Link>
+					<Link className={currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 underline text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'} to="/about">About</Link>
 				</footer>
 			</div>
 		</PageContext.Provider>
