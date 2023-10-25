@@ -19,7 +19,7 @@ export default function Home() {
 					backgroundPosition: 'center center',
 					backgroundRepeat: 'no-repeat',}}>
 				</div>
-				<div className="bg-grey-400 p-4 rounded-xl flex justify-center items-center">
+				<div className="bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900 hover:prose-p:text-blue-600 rounded-xl flex justify-center items-center">
 				
 				<p className="text-center leading-relaxed">
 				Hello there my good friends. Are you tired of losing money
@@ -28,7 +28,7 @@ export default function Home() {
 				99% of all gamblers quit right before they win big. </p>
 				
 				</div>
-				<div className="bg-grey-400 p-4 rounded flex justify-center items-center">
+				<div className="bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900 hover:prose-p:text-blue-600 rounded flex justify-center items-center">
 				
 				<p className="text-center leading-relaxed">
 				All you need
