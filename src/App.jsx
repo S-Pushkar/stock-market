@@ -30,7 +30,7 @@ function App() {
 							<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">Portfolio</Link>
 						</div>
 						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/sign-up">{log}</Link>
+							<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to={log=="Signup"?"/sign-up":"/log-in"}>{log}</Link>
 						</div>
 					</nav>
 					<hr />
@@ -46,9 +46,10 @@ function App() {
 					</Routes>
 				</main>
 
-				<hr className='mt-8 mb-8' />
-				<footer className='flex justify-start'>
-					<Link className={currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'} to="/about">About</Link>
+				<hr />
+				<footer className='flex justify-start bg-[#000000]'>
+					
+					<Link className={currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'} to="/about">ABOUT</Link>
 				</footer>
 			</div>
 		</PageContext.Provider>

@@ -19,13 +19,19 @@ export default function Login() {
                         <input className="rounded p-1 mt-4 mb-8 lg:w-1/2" type="email" name="email" placeholder="example@gmail.com" required />
                     </div>
 					<div>
+                        <div className="mr-2 text-xs lg:text-lg">
+                            Password : 
+                        </div>
+                        <input className="rounded p-1 mt-4 mb-8 lg:w-1/2" type="password" name="password"  required />
+                    </div>
+					<div>
 						<button className="bg-[rgb(227,223,223)] m-2 shadow-md text-black px-2 py-1 hover:bg-gray" type="submit">Submit</button>
-						<button className="bg-[rgb(227,223,223)] m-2 shadow-md text-black px-2 py-1 hover:bg-gray" type="reset">Reset</button>
+						<button className="bg-[rgb(227,223,223)] m-2 shadow-md text-black px-2 py-1 hover:bg-gray" type="reset">Clear</button>
 					</div>
 					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-						<h3>Click&nbsp;</h3>
-						<Link to={{pathname: '/sign-up', state: {log: 'Signup'}}}>Here</Link>
-						<h3>&nbsp;to signup</h3>
+						<h4 style={{ fontSize: '16px' }}>Click&nbsp;</h4>
+						<Link to={{ pathname: '/sign-up', state: { log: 'Signup' } }} style={{ fontSize: '16px', color: 'black' }}>Here</Link>
+						<h4 style={{ fontSize: '16px' }}>&nbsp;to signup</h4>
 					</div>
                 </form>
             </div>

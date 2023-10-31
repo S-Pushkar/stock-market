@@ -12,12 +12,13 @@ export default function Home() {
         <div className="lg:px-20 px-8 md:text-base text-xs lg:text-base">
             <h1 className="text-[rgb(212,195,87)] mt-4 mb-2 text-sm lg:text-lg font-bold">HOME</h1>
 			<div className="grid grid-cols-2 grid-rows-2 h-screen">
-				<div className="bg-grey-400 p-4 rounded flex justify-center items-center"
+				<div className="bg-grey-400 p-4 rounded-lg flex justify-center items-center"
 					style={{
 					backgroundImage: `url(${backgroundImage})`,
 					backgroundSize: 'contain',
 					backgroundPosition: 'center center',
-					backgroundRepeat: 'no-repeat',}}>
+					backgroundRepeat: 'no-repeat',
+					}}>
 				</div>
 				<div className="bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900 hover:prose-p:text-blue-600 rounded-xl flex justify-center items-center">
 				
@@ -37,12 +38,13 @@ export default function Home() {
 				bull in no time at all. So whatre you waiting for, buy stocks now!</p>
 				
 				</div>
-				<div className="bg-grey-400 p-4 rounded flex justify-center items-center"
+				<div className="bg-grey-400 p-2 rounded flex justify-center items-center"
 					style={{
 					backgroundImage: `url(${backgroundImage2})`,
 					backgroundSize: 'contain',
 					backgroundPosition: 'center center',
-					backgroundRepeat: 'no-repeat',}}>
+					backgroundRepeat: 'no-repeat',
+					}}>
 				</div>
 			</div>
         </div>
