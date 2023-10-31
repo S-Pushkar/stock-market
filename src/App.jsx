@@ -6,7 +6,7 @@ import Invest from './Invest'
 import Portfolio from './Portfolio';
 import About from './About';
 import Signup from './Signup';
-
+import Login from './Login';
 const PageContext = createContext();
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 							<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">Portfolio</Link>
 						</div>
 						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={currentPage == 'Signup' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/sign-up">{log}</Link>
+							<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/sign-up">{log}</Link>
 						</div>
 					</nav>
 					<hr />
@@ -42,6 +42,7 @@ function App() {
 						<Route path="/portfolio" element={<Portfolio />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/sign-up" element={<Signup />} />
+						<Route path="log-in" element={<Login />} />
 					</Routes>
 				</main>
 
