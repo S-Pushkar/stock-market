@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div className="lg:px-20 px-8 md:text-base text-xs lg:text-base">
             <h1 className="text-[rgb(212,195,87)] mt-4 mb-2 text-sm lg:text-lg font-bold">HOME</h1>
-			<div className="grid grid-cols-2 grid-rows-2 h-screen">
+			<div className="grid grid-cols-2 grid-rows-2 min-h-screen mt-8 mb-8">
 				<div className="bg-grey-400 p-4 rounded-lg flex justify-center items-center"
 					style={{
 					backgroundImage: `url(${backgroundImage})`,
@@ -47,7 +47,7 @@ export default function Home() {
 					}}>
 				</div>
 			</div>
-			<br></br>
+			<br />
         </div>
     );
 }

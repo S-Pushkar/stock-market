@@ -45,13 +45,14 @@ function App() {
 						<Route path="log-in" element={<Login />} />
 					</Routes>
 				</main>
-
-				<hr />
-				<footer className='flex justify-start bg-[#000000]'>
-					<div className={`foot-stuff`}>
-						<Link className={`link ${currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about" style={{padding:'5px'}}>ABOUT</Link>
-					</div>
-				</footer>
+				<div className='mb-0 w-full mt-4'>
+					<hr />
+					<footer className='flex justify-start'>
+						<div className={`foot-stuff`}>
+							<Link className={`link ${currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about" style={{padding:'5px'}}>ABOUT</Link>
+						</div>
+					</footer>
+				</div>
 			</div>
 		</PageContext.Provider>
 	);
