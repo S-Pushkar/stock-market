@@ -58,7 +58,7 @@ function App() {
 						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://www.facebook.com/"><img className={`fbimg`} src={Facebook} alt="Facebook" /></a>
 						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://www.instagram.com/"><img className={`igimg`} src={InstaImg} alt="Instagram" /></a>
 						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Facebook" /></a>
-						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://www.facebook.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
+						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
 					</div>
 				</footer>
 			</div>

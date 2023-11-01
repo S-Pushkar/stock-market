@@ -63,34 +63,10 @@
 	height: 40px;
 	width: auto;
 }
-.aboutimg:hover{
-	filter:invert(0%);
-	height: 40px;
-	width: auto;
-	background-color:rgba(255, 255, 255,1.0);
-	box-shadow: 0 0 5px 5px rgba(255, 255, 255, 1.0);
-}
-.fbimg:hover{
-	filter:invert(0%);
-	height: 40px;
-	width: auto;
-	background-color:rgba(66, 103, 178, 1.0);
-	box-shadow: 0 0 5px 5px rgba(66, 103, 178, 1.0);
-}
-.igimg:hover{
-	filter:invert(0%);
-	height: 40px;
-	width: auto;
-	background-color:rgba(131, 58, 180, 1);
-	box-shadow: 0 0 5px 5px rgba(131, 58, 180, 1);
-}
-.inimg:hover{
-	filter:invert(0%);
-	height: 40px;
-	width: auto;
-	background-color:rgba(66, 103, 178, 1.0);
-	box-shadow: 0 0 5px 5px rgba(66, 103, 178, 1.0);
-}
+.aboutimg:hover,
+.fbimg:hover,
+.igimg:hover,
+.inimg:hover,
 .ximg:hover{
 	filter:invert(0%);
 	height: 40px;
