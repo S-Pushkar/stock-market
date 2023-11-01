@@ -8,6 +8,11 @@ import About from './About';
 import Signup from './Signup';
 import Login from './Login';
 import Profile from './Profile';
+import Facebook from "./assets/Facebook.png";
+import AboutImg from "./assets/About.png";
+import InstaImg from "./assets/Instagram.png";
+import LinImg from "./assets/Linkedin.png";
+import TwitImg from "./assets/X.png";
 const PageContext = createContext();
 
 function App() {
@@ -49,11 +54,15 @@ function App() {
 				</main>
 				<div className='mb-0 w-full mt-4'>
 					<hr />
-					<footer className='flex justify-start'>
-						<div className={`foot-stuff`}>
-							<Link className={`link ${currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about" style={{padding:'5px'}}>ABOUT</Link>
-						</div>
-					</footer>
+				<footer className='flex justify-start bg-[#000000]'>
+					<div className={`foot-stuff`}>
+						<Link className={`link ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about"><img className={`aboutimg`} src={AboutImg} alt="about" /></Link>
+						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://www.facebook.com/"><img className={`fbimg`} src={Facebook} alt="Facebook" /></a>
+						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://www.instagram.com/"><img className={`igimg`} src={InstaImg} alt="Instagram" /></a>
+						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Facebook" /></a>
+						<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
+					</div>
+				</footer>
 				</div>
 			</div>
 		</PageContext.Provider>
