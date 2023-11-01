@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+.link{
+	padding: 5px;
+	color: white;
+}
+.link:hover{
+	padding: 5px;
+	color: black;
+	background-color:rgba(255, 255, 255, 0.9);
+	box-shadow: 0 0 5px 5px rgba(255, 255, 255);
+}
+.foot-stuff {
+	display: flex;
+	padding:20px;
+	justify-content: space-between;
+}
+.foot-stuff Link{
+	display: inline-block;
+	width: auto;
+	text-align: center;
+}

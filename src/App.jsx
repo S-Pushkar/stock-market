@@ -48,8 +48,9 @@ function App() {
 
 				<hr />
 				<footer className='flex justify-start bg-[#000000]'>
-					
-					<Link className={currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'} to="/about">ABOUT</Link>
+					<div className={`foot-stuff`}>
+						<Link className={`link ${currentPage == 'About' ? 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8 text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about" style={{padding:'5px'}}>ABOUT</Link>
+					</div>
 				</footer>
 			</div>
 		</PageContext.Provider>

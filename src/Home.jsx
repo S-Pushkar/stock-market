@@ -38,7 +38,7 @@ export default function Home() {
 				bull in no time at all. So whatre you waiting for, buy stocks now!</p>
 				
 				</div>
-				<div className="bg-grey-400 p-2 rounded flex justify-center items-center"
+				<div className="bg-grey-400 p-4 rounded flex justify-center items-center"
 					style={{
 					backgroundImage: `url(${backgroundImage2})`,
 					backgroundSize: 'contain',
@@ -47,6 +47,7 @@ export default function Home() {
 					}}>
 				</div>
 			</div>
+			<br></br>
         </div>
     );
 }
