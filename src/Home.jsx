@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from 'react';
 import { PageContext } from './App';
 import backgroundImage from './background3.jpg';
 import backgroundImage2 from './background2.jpg';

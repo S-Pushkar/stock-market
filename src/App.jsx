@@ -2,11 +2,12 @@ import { Link, Routes, Route } from 'react-router-dom';
 import { createContext, useState } from 'react';
 import './App.css';
 import Home from './Home';
-import Invest from './Invest'
+import Invest from './Invest';
 import Portfolio from './Portfolio';
 import About from './About';
 import Signup from './Signup';
 import Login from './Login';
+import Profile from './Profile';
 const PageContext = createContext();
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
 						<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">
 							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>Portfolio</div>
 						</Link>
-						<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to={log=="Signup"?"/sign-up":"/log-in"}>
+						<Link className={(currentPage == 'Signup' || currentPage == 'Login' || currentPage == 'Profile') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to={log == "Signup" ? "/sign-up" : log == "Login" ?  "/log-in" : "/profile"}>
 							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>{log}</div>
 						</Link>
 					</nav>
@@ -42,7 +43,8 @@ function App() {
 						<Route path="/portfolio" element={<Portfolio />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/sign-up" element={<Signup />} />
-						<Route path="log-in" element={<Login />} />
+						<Route path="/log-in" element={<Login />} />
+						<Route path="/profile" element={<Profile />} />
 					</Routes>
 				</main>
 				<div className='mb-0 w-full mt-4'>
