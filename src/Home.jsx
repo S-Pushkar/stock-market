@@ -34,8 +34,8 @@ export default function Home() {
 				<p className="text-center leading-relaxed">
 				All you need
 				is a little luck, a lot of patience and the right partner, to help you navigate the ever changing market.
-				With us as your broker youll never have to worry about returns again. Well take you from bankrupt to 
-				bull in no time at all. So whatre you waiting for, buy stocks now!</p>
+				With us as your broker youll never have to worry about returns again. We'll take you from bankrupt to 
+				bull in no time at all. So what're you waiting for, buy stocks now!</p>
 				
 				</div>
 				<div className="bg-grey-400 p-4 rounded flex justify-center items-center"
