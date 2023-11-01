@@ -1,4 +1,4 @@
-import {Link, Routes, Route} from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 import { createContext, useState } from 'react';
 import './App.css';
 import Home from './Home';
@@ -20,18 +20,18 @@ function App() {
 						<h1 className='text-[rgb(77,212,106)] text-s lg:text-3xl text-center font-bold'>Stocks</h1>
 					</Link>
 					<nav className='flex flex-wrap flex-shrink-10 items-center justify-between md:justify-start lg:justify-start my-4 mx-4 lg:p-4 p-0'>
-						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={currentPage == 'Home' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/">Home</Link>
-						</div>
-						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={currentPage == 'Invest' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/invest">Invest</Link>
-						</div>
-						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">Portfolio</Link>
-						</div>
-						<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>
-							<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to={log=="Signup"?"/sign-up":"/log-in"}>{log}</Link>
-						</div>
+						<Link className={currentPage == 'Home' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/">
+							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>Home</div>
+						</Link>
+						<Link className={currentPage == 'Invest' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/invest">
+							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>Invest</div>
+						</Link>
+						<Link className={currentPage == 'Portfolio' ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to="/portfolio">
+							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>Portfolio</div>
+						</Link>
+						<Link className={(currentPage=='Signup'||currentPage=='Login') ? 'sm:text-xs lg:text-lg text-[rgb(115,218,230)]' : 'sm:text-xs lg:text-lg'} to={log=="Signup"?"/sign-up":"/log-in"}>
+							<div className='lg:px-6 px-2 bg-[rgb(64,64,64)] border-2 border-solid border-black rounded-xl'>{log}</div>
+						</Link>
 					</nav>
 					<hr />
 				</header>
