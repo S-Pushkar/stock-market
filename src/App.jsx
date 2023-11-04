@@ -69,5 +69,5 @@ function App() {
 	);
 }
 
-export {PageContext};
+export { PageContext };
 export default App;
