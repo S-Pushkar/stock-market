@@ -16,7 +16,7 @@ export default function Login() {
                         <div className="mr-2 text-xs lg:text-lg">
                             Email : 
                         </div>
-                        <input className="rounded p-1 mt-4 mb-8 lg:w-1/2" type="email" name="email" placeholder="example@gmail.com" required />
+                        <input className="rounded p-1 mt-4 mb-8 lg:w-1/2" type="email" name="email" placeholder="example@gmail.com" required autoFocus />
                     </div>
 					<div>
                         <div className="mr-2 text-xs lg:text-lg">
