@@ -8,13 +8,13 @@ import About from './About';
 import Signup from './Signup';
 import Login from './Login';
 import Profile from './Profile';
-import Facebook from "./assets/Facebook.png";
-import AboutImg from "./assets/About.png";
-import InstaImg from "./assets/Instagram.png";
-import LinImg from "./assets/Linkedin.png";
-import TwitImg from "./assets/X.png";
+import Facebook from "./assets/Facebook.svg";
+import AboutImg from "./assets/About.svg";
+import InstaImg from "./assets/Instagram.svg";
+import LinImg from "./assets/Linkedin.svg";
+import TwitImg from "./assets/X.svg";
 const PageContext = createContext();
-
+//TZ0ZUENF0J4KPPOC API key. Do Not Touch
 function App() {
 	const [log, setLog] = useState('Signup');
 	const [currentPage, setCurrentPage] = useState('Home');
@@ -60,8 +60,8 @@ function App() {
 							{/* <div className='ml-auto flex flex-row justify-end'> */}
 								{/* <a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.facebook.com/"><img className={`fbimg`} src={Facebook} alt="Facebook" /></a> */}
 								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.instagram.com/"><img className={`igimg`} src={InstaImg} alt="Instagram" /></a>
-								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Facebook" /></a>
-								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
+								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Linkedin" /></a>
+								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Twitter" /></a>
 							{/* </div> */}
 						</div>
 					</footer>
