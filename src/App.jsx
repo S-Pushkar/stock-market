@@ -54,13 +54,15 @@ function App() {
 				</main>
 				<div className='mb-0 w-full mt-4'>
 					<hr />
-					<footer className='flex justify-start'>
+					<footer className='flex'>
 						<div className={`foot-stuff`}>
 							<Link className={`link ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} to="/about"><img className={`aboutimg`} src={AboutImg} alt="about" /></Link>
-							<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.facebook.com/"><img className={`fbimg`} src={Facebook} alt="Facebook" /></a>
-							<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.instagram.com/"><img className={`igimg`} src={InstaImg} alt="Instagram" /></a>
-							<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Facebook" /></a>
-							<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
+							{/* <div className='ml-auto flex flex-row justify-end'> */}
+								{/* <a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.facebook.com/"><img className={`fbimg`} src={Facebook} alt="Facebook" /></a> */}
+								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://www.instagram.com/"><img className={`igimg`} src={InstaImg} alt="Instagram" /></a>
+								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://in.linkedin.com/"><img className={`inimg`} src={LinImg} alt="Facebook" /></a>
+								<a className={`imgs ${'sm:text-xs lg:text-lg ml-8 mr-8 mb-8'}`} target = "_blank" href="https://twitter.com/"><img className={`ximg`} src={TwitImg} alt="Facebook" /></a>
+							{/* </div> */}
 						</div>
 					</footer>
 				</div>
