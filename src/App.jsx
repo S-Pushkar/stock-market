@@ -14,7 +14,7 @@ import InstaImg from "./assets/Instagram.svg";
 import LinImg from "./assets/Linkedin.svg";
 import TwitImg from "./assets/X.svg";
 const PageContext = createContext();
-//TZ0ZUENF0J4KPPOC API key. Do Not Touch
+
 function App() {
 	const [log, setLog] = useState('Signup');
 	const [currentPage, setCurrentPage] = useState('Home');
