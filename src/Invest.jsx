@@ -8,7 +8,7 @@ export default function Invest() {
 	const [stknm, setStknm]= useState('');
 	const [resp, setResp]=useState('');
 	const [searn,setSearn]=useState('');
-	const [inc,setInc]=useState(1);
+	const [inc,setInc]=useState('');
     useEffect(() => {
         setCurrentPage('Invest');
     }, [currentPage]);
@@ -17,12 +17,13 @@ export default function Invest() {
     };
 	const upstknm =async function(e){
 		if(e.key==='Enter'){
-			setSearn(stockName);
+			await setSearn(stockName);
 			await fetchName();
 		}
 	};
-	//TZ0ZUENF0J4KPPOC API key. Do Not Touch
-	const apiKey="TZ0ZUENF0J4KPPOC";
+	//TZ0ZUENF0J4KPPOC API key
+	//DVLNHBAEF8ZX4L4Z API key
+	const apiKey="DVLNHBAEF8ZX4L4Z";
 	const url =`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stknm}&apikey=${apiKey}`;
 	const surl=`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searn}&apikey=${apiKey}`;
 	
@@ -85,15 +86,16 @@ export default function Invest() {
     // ]
 	
 	const fetchName=async function(){ 
-		axios.get(surl)
-			.then(response=>{
-				console.log(response.data);
-				setStknm(response.data["bestMatches"][0]["1. symbol"]); //fetches the stock symbol
-			})
-			.catch(error=>{
-				console.error('Error Fetching Data:', error);
-				return;
-			});
+		try{
+			const response=await axios.get(surl);
+			console.log(response.data);
+			setStknm(response.data["bestMatches"][0]["1. symbol"]);
+		}
+		catch(error)
+		{
+			setStknm("IBM");
+			console.error('Error fetching Data:', error);
+		}
 		await fetchData();
 	}
 	
@@ -113,16 +115,18 @@ export default function Invest() {
 		
 		
 
-	const fetchData=()=>{
-		axios.get(url)
-			.then(response=>{
+	const fetchData=async function(){
+		try{
+				const response=await axios.get(url);
 				console.log(response.data);
 				setResp(response.data["Global Quote"]["10. change percent"]);//gets stock information
 				setInc(Number(response.data["Global Quote"]["09. change"]));
-			})
-			.catch(error=>{
+			}
+		catch(error){
+				setResp("1.00%");//gets stock information
+				setInc(Number("1.123"));
 				console.error('Error Fetching Data:', error);
-			});
+			}	
 	}
     return (
         <div className="lg:px-20 px-8 md:text-base text-xs lg:text-base">
