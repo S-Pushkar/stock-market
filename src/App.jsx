@@ -52,7 +52,7 @@ function App() {
 						<Route path="/profile" element={<Profile />} />
 					</Routes>
 				</main>
-				<div className='mb-0 w-full mt-4'>
+				<div className='bg-black mb-0 w-full mt-4'>
 					<hr />
 					<footer className='flex'>
 						<div className={`foot-stuff`}>

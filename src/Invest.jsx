@@ -1,19 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PageContext } from './App';
 import axios from 'axios';
+import GreenArrow from "./GreenArrow.svg";
+import RedArrow from "./RedArrow.svg";
+import './App.css';
 
 export default function Invest() {
     const { log, setLog, currentPage, setCurrentPage } = useContext(PageContext);
-    const [stockName, setStockName] = useState(''); 
-	const [stknm, setStknm]= useState('');
-	const [resp, setResp]=useState('');
-	const [searn,setSearn]=useState('');
-	const [inc,setInc]=useState('');
+    const [stockName, setStockName] = useState(''); //This is whatever is typed in text bar
+	const [stknm, setStknm]= useState(''); //Symbol of the best match stock
+	const [resp, setResp]=useState(''); //percentage change in the stock
+	const [searn,setSearn]=useState(''); //When enter is pressed in text bar the query is stores here
+	const [inc,setInc]=useState(null); //change in the stock price ($)
+	const [pname, setPname]=useState(''); //this is the name of the best match stock
+	const [sprice, setSprice]=useState(null);
     useEffect(() => {
         setCurrentPage('Invest');
     }, [currentPage]);
-    const changeStockName=(e)=>{
-            setStockName(e.target.value);
+    const changeStockName=async function(e){
+           await setStockName(e.target.value);
     };
 	const upstknm =async function(e){
 		if(e.key==='Enter'){
@@ -23,7 +28,7 @@ export default function Invest() {
 	};
 	//TZ0ZUENF0J4KPPOC API key
 	//DVLNHBAEF8ZX4L4Z API key
-	const apiKey="DVLNHBAEF8ZX4L4Z";
+	const apiKey="TZ0ZUENF0J4KPPOC";
 	const url =`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stknm}&apikey=${apiKey}`;
 	const surl=`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searn}&apikey=${apiKey}`;
 	
@@ -84,19 +89,28 @@ export default function Invest() {
             // "9. matchScore": "0.5455"
         // }
     // ]
+	const fetchDt=async function(){
+		const response=await axios.get(surl);
+		await console.log(response.data);
+		await setStknm(response.data["bestMatches"][0]["1. symbol"]);
+		await setPname(response.data["bestMatches"][0]["2. name"]);
+		return;
+	}
+	
 	
 	const fetchName=async function(){ 
 		try{
-			const response=await axios.get(surl);
-			console.log(response.data);
-			setStknm(response.data["bestMatches"][0]["1. symbol"]);
+			
+			await fetchDt();
+			await fetchData();
+			return;
 		}
 		catch(error)
 		{
-			setStknm("IBM");
-			console.error('Error fetching Data:', error);
+			await setPname("Error In Fetching Data: No");
+			await console.error('Error fetching Data:', error);
+			return;
 		}
-		await fetchData();
 	}
 	
 	
@@ -113,19 +127,23 @@ export default function Invest() {
         // "10. change percent": "0.7235%"
 		// }
 		
-		
+	const fetchDt2=async function(){
+		const response=await axios.get(url);
+		await console.log(response.data);
+		await setResp(response.data["Global Quote"]["10. change percent"]);//gets stock information
+		await setInc(Number(response.data["Global Quote"]["2. name"]));
+		await setSprice(Number(response.data["Global Quote"]["05. price"]))
+		return;
+	}
 
 	const fetchData=async function(){
 		try{
-				const response=await axios.get(url);
-				console.log(response.data);
-				setResp(response.data["Global Quote"]["10. change percent"]);//gets stock information
-				setInc(Number(response.data["Global Quote"]["09. change"]));
+				await fetchDt2();
+				return;
 			}
 		catch(error){
-				setResp("1.00%");//gets stock information
-				setInc(Number("1.123"));
-				console.error('Error Fetching Data:', error);
+				await console.error('Error Fetching Data:', error);
+				return;
 			}	
 	}
     return (
@@ -135,13 +153,19 @@ export default function Invest() {
                 <input className={`rounded p-1 mt-4 mb-4 lg:w-1/2 searstock`} type="text" name="stockname" placeholder="Enter The Stock Name" value={stockName} onChange={changeStockName} onKeyPress={upstknm} required autoFocus/>
             </div>
             <div>
-					<p className="text-center leading-relaxed">{surl}</p>
+			{/*<p className="text-center leading-relaxed">{surl}</p>
 					<p className="text-center leading-relaxed">{searn}</p>
 					<p className="text-center leading-relaxed">{stknm}</p>
 					<p className="text-center leading-relaxed">{url}</p>
 					<p className="text-center leading-relaxed">{inc}</p>
-					<p className="text-center leading-relaxed">{resp}</p>
-					
+<p className="text-center leading-relaxed">{resp}</p>*/}
+					{pname !=='' && (<div className={`StkDisp ${"rounded-lg flex justify-center items-center"}`}>
+						<img className={'arrImg'} src={inc>=0?GreenArrow:RedArrow} style={{width:`1em`,height:`auto`,}}/>
+						<div className={'outDisp'}>
+						<div className={'inDisp'} style={{color: inc>=0? 'green':'red',display:'block',}}>&nbsp;{resp}&nbsp;{pname}&nbsp;{sprice}-Change&nbsp;{inc}$&nbsp;</div>
+						</div>
+						<button className="bg-[rgb(227,223,223)] m-3 text-black px-1 py-1 hover:bg-gray" onClick={() => buyShares()}>BUY</button>
+					</div>)}
             </div>
         </div>
     );
