@@ -21,7 +21,7 @@ function App() {
 	return (
 		<PageContext.Provider value={{log, setLog, currentPage, setCurrentPage}}>
 			<div className='min-h-screen flex flex-col justify-center'>
-				<header className='sticky top-0 w-full flex flex-col justify-center bg-[#000000]'>
+				<header className={`Head${'sticky top-0 w-full flex flex-col justify-center bg-[#000000]'}`}>
 					<Link to="/">
 						<h1 className='text-[rgb(77,212,106)] text-s lg:text-3xl text-center font-bold'>Stocks</h1>
 					</Link>

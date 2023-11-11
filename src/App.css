@@ -74,7 +74,14 @@
 	background-color:rgba(255, 255, 255,1.0);
 	box-shadow: 0 0 5px 5px rgba(255, 255, 255, 1.0);
 }
+.Enclosure{
+	z-index:-5;
+}
+.Head{
+	z-index:5;
+}
 .StkDisp{
+	z-index:-4;
   background-color:black;
   border: 1px solid white;
   font-size: 1em;
@@ -83,22 +90,24 @@
   padding: 0;
 }
 .arrImg{
+	left:0;
 	margin-left:1em;
 }
 .outDisp{
+	z-index:;
 	margin-left:1em;
-	width: 30em;
+	width: 55em;
 	overflow:hidden
 }
 .inDisp {
-  /* animation properties */
+  z-index:-6;
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   
-  -moz-animation: my-animation 25s linear infinite;
-  -webkit-animation: my-animation 25s linear infinite;
-  animation: my-animation 25s linear infinite;
+  -moz-animation: my-animation 30s linear infinite;
+  -webkit-animation: my-animation 30s linear infinite;
+  animation: my-animation 30s linear infinite;
 }
 
 /* for Firefox */
