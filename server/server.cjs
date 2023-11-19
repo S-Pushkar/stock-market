@@ -3,7 +3,7 @@ const express = require('express');
 const cors=require('cors');
 const bodyParser = require('body-parser');
 // const bcrypt = require('bcrypt');
-const { run_signup } = require('./backend_functions.cjs'); // Adjust the path accordingly
+const { run_signup,run_login } = require('./backend_functions.cjs'); // Adjust the path accordingly
 
 const app = express();
 const port = 3000;
@@ -40,6 +40,26 @@ app.post('/signup', async (req, res) => {
     }
     else{
         res.status(400).json(signedResponse);
+    }
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
+
+app.post('/login', async (req, res) => {
+  try {
+    console.log(req.body); 
+    const { email, password } = req.body;
+
+    const loginResponse= await run_login(email,password);
+    console.log('loginResponse:', loginResponse);
+    if(loginResponse.login){
+        res.status(201).json(loginResponse);
+    }
+    else{
+        res.status(400).json(loginResponse);
     }
     
   } catch (error) {
