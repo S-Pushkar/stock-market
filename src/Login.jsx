@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PageContext } from './App';
 import { Link,useNavigate } from 'react-router-dom';
+import { useStocks } from './StockContext';
 export default function Login() {
     const {log, setLog, currentPage, setCurrentPage} = useContext(PageContext);
     const navigate=useNavigate();
-
+    const {setStocks,setEmail}=useStocks();
     const [formdata,setFormData]=useState({
         email:'',
         password:'',
@@ -36,9 +37,11 @@ export default function Login() {
             })
 
             const data=await connection.json();
-
+         
             if(connection.ok){
                 console.log(data.message);
+                setStocks(data.stocks);
+                setEmail(formdata.email);
                 navigate('/');
             }
             else{

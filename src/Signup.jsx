@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PageContext } from './App';
 import { Link, useNavigate } from 'react-router-dom';
+import { useStocks } from './StockContext';
 export default function Signup() {
     const {log, setLog, currentPage, setCurrentPage} = useContext(PageContext);
     const navigate = useNavigate();
+    const {setStocks,setEmail}=useStocks();
     const[formData,setFormData]=useState({
         name:'',
         email:'',
@@ -41,9 +43,11 @@ export default function Signup() {
             });
             // console.log('after fetch');
             const data=await connection.json()
-
+           
             if (connection.ok) {
                 console.log(data.message)
+                setStocks(data.stocks);
+                setEmail(formData.email);
                 navigate('/');
                 // window.location.reload();
             } else {

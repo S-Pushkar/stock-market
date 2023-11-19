@@ -12,6 +12,8 @@ const bcrypt=require('bcrypt');
 // Replace the following with your Atlas connection string                                                                                                                                        
 const url = "mongodb+srv://admin:%23admin4webtech@webtechprojectstockmark.htbou8u.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
+
+
  async function run_login(email,password){
     try{
         await client.connect();
@@ -21,7 +23,13 @@ const client = new MongoClient(url);
             console.log('userfound')
             if(password==record.passwd){
                 console.log('succesful login');
-                return{login:true,message:'user login succesful'};
+
+                const portfolioRecord = await client.db("Stockmarket").collection("portfolio").findOne({ email: email.toLowerCase() });
+                const userStocks = portfolioRecord ? portfolioRecord.stocks : [];
+
+                console.log('User Stocks:', userStocks);
+
+                return{login:true,message:'user login succesful',stocks:userStocks};
             }
             else{
                 console.log('wrong passwd')
@@ -56,7 +64,13 @@ const client = new MongoClient(url);
         //      "passwd": hashedPassword                                                                                                                                  
         //      };
         await insertrecord(client,personDocument);
-        return { success: true, message: 'User signed up successfully' };
+
+        const portfolioRecord=await client.db("Stockmarket").collection("portfolio").insertOne({
+            email: personDocument.email,
+            stocks: [] // Start with an empty array of stocks
+        });
+
+        return { success: true, message: 'User signed up successfully',stocks:portfolioRecord.stocks };
         } catch (err) {
          console.error(err.stack);
          return { success: false, message: 'Signup failed. Email already exist' };
@@ -86,7 +100,33 @@ async function checkEmailExists(client,email){
     return (!!existing && email!==null);
 }
 
-module.exports={
+async function run_stock(email, newStocks) {
+    try {
+        await client.connect();
+
+        // Update the existing portfolio document with the new array of stocks
+        const result = await client.db("Stockmarket").collection("portfolio").updateOne(
+            { email: email.toLowerCase() },
+            { $set: { stocks: newStocks } }
+        );
+
+        if (result.modifiedCount === 1) {
+            console.log('Stocks updated successfully');
+            return { status: true, message: 'Stocks updated successfully' };
+        } else {
+            console.log('Failed to update stocks');
+            return { status: false, message: 'buy or sell stocks to update portfolio' };
+        }
+    } catch (error) {
+        console.error('Error during updating stocks:', error.message);
+        return { status: false, message: 'Internal Server Error' };
+    } finally {
+        await client.close();
+    }
+}
+
+module.exports = {
     run_signup,
     run_login,
+    run_stock,
 };

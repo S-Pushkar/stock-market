@@ -14,11 +14,14 @@ import InstaImg from "./assets/Instagram.svg";
 import LinImg from "./assets/Linkedin.svg";
 import TwitImg from "./assets/X.svg";
 const PageContext = createContext();
+import { StocksProvider } from './StockContext';
+import React from 'react';
 
 function App() {
 	const [log, setLog] = useState('Signup');
 	const [currentPage, setCurrentPage] = useState('Home');
 	return (
+		<StocksProvider>
 		<PageContext.Provider value={{log, setLog, currentPage, setCurrentPage}}>
 			<div className='min-h-screen flex flex-col justify-center'>
 				<header className={`Head${'sticky top-0 w-full flex flex-col justify-center bg-[#000000]'}`}>
@@ -68,6 +71,7 @@ function App() {
 				</div>
 			</div>
 		</PageContext.Provider>
+		</StocksProvider>
 	);
 }
 
