@@ -11,56 +11,27 @@ export default function About() {
     return (
         <div className="lg:px-20 px-8 md:text-base text-xs lg:text-base">
             <h1 className="text-[rgb(212,195,87)] mt-4 mb-2 text-sm lg:text-lg font-bold">ABOUT</h1>
-           <div className="grid grid-cols-2 grid-rows-3 min-h-screen mt-8 mb-8">
-				<div className={`profimg ${'bg-grey-400 p-4 rounded-lg flex justify-center items-center'}`}
-					style={{
-					backgroundImage: `url(${AboutImg})`,
-					height:'20em',
-					width:'auto',
-					backgroundSize: 'contain',
-					backgroundPosition: 'center center',
-					backgroundRepeat: 'no-repeat',
-					}}>
+				<div className={`aboutp ${"rounded-lg flex justify-center items-center"}`}>
+					<img className={`profimg ${"rounded-lg flex justify-center items-center"}`} src={AboutImg} style={{width:`18em`,height:`auto`,}}/>
+					<div className={`abtxt ${"rounded-lg flex justify-center items-center"}`}>
+						<p style={{ fontWeight: 'bold', fontSize: '1.5em' }}>Priyanshu Sachan :&nbsp;</p>
+						<p style={{fontSize: '1em' }}>About Priyanshu Sachan</p>
+					</div>
 				</div>
-				<div className={`abtxt ${'bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900  hover:text-white rounded-xl flex justify-center'}`}>
-					<p className="text-center leading-relaxed">
-					<h2 style={{color:'white',}}>Priyanshu Sachan</h2>
-						About Priyanshu Sachan
-					</p>
+				<div className={`aboutp ${"rounded-lg flex justify-center items-center"}`}>
+					<div className={`abtxt ${"rounded-lg flex justify-center items-center"}`}>
+						<p style={{ fontWeight: 'bold', fontSize: '1.5em' }}>Pushkar Urs :&nbsp;</p>
+						<p style={{fontSize: '1em' }}>About Pushkar Urs</p>
+					</div>
+					<img className={`profimg ${"rounded-lg flex justify-center items-center"}`} src={AboutImg} style={{width:`18em`,height:`auto`,}}/>
 				</div>
-				<div className={`abtxt ${'bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900  hover:text-white rounded-xl flex justify-center'}`}>
-					<p className="text-center leading-relaxed">
-					<h2 style={{color:'white',}}>Pushkar P Urs</h2>
-						About Pushkar Urs
-					</p>
+				<div className={`aboutp ${"rounded-lg flex justify-center items-center"}`}>
+					<img className={`profimg ${"rounded-lg flex justify-center items-center"}`} src={AboutImg} style={{width:`18em`,height:`auto`,}}/>
+					<div className={`abtxt ${"rounded-lg flex justify-center items-center"}`}>
+						<p style={{ fontWeight: 'bold', fontSize: '1.5em' }}>Pushkar S :&nbsp;</p>
+						<p style={{fontSize: '1em' }}>About Pushkar S</p>
+					</div>
 				</div>
-				<div className={`profimg ${'bg-grey-400 p-4 rounded-lg flex justify-center items-center'}`}
-					style={{
-					backgroundImage: `url(${AboutImg})`,
-					height:'20em',
-					width:'auto',
-					backgroundSize: 'contain',
-					backgroundPosition: 'center center',
-					backgroundRepeat: 'no-repeat',
-					}}>
-				</div>
-				<div className={`profimg ${'bg-grey-400 p-4 rounded-lg flex justify-center items-center'}`}
-					style={{
-					backgroundImage: `url(${AboutImg})`,
-					height:'20em',
-					width:'auto',
-					backgroundSize: 'contain',
-					backgroundPosition: 'center center',
-					backgroundRepeat: 'no-repeat',
-					}}>
-				</div>
-				<div className={`abtxt ${'bg-grey-400 p-4 prose lg:prose-xl prose-p:text-grey-900  hover:text-white rounded-xl flex justify-center'}`}>
-					<p className="text-center leading-relaxed">
-					<h2 style={{color:'white',}}>Pushkar S</h2>
-						About Pushkar S
-					</p>
-				</div>
-		   </div>
         </div>
     );
 }

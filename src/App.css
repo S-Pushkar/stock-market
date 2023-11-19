@@ -136,5 +136,17 @@
 }
 .profimg
 {
+	filter:invert(100%);
 	overflow:hidden;
+}
+.abtxt
+{
+	width:40em;
+}
+.aboutp
+{
+	background-color:black;
+  border: 1px solid white;
+  font-weight: normal;
+  margin-bottom: 2em;
 }
