@@ -11,7 +11,6 @@ export default function Signup() {
         password2:'',
     })
     
-    const [passwordMatch,setPasswordMatch]=useState(true);
     const [errorMessage,setErrorMessage]=useState('');
 
     const updateForm=(e)=>{
@@ -45,7 +44,7 @@ export default function Signup() {
 
             if (connection.ok) {
                 console.log(data.message)
-                navigate('/portfolio');
+                navigate('/');
                 // window.location.reload();
             } else {
                 setErrorMessage(data.message);

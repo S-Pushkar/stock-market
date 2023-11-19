@@ -12,13 +12,40 @@ const bcrypt=require('bcrypt');
 // Replace the following with your Atlas connection string                                                                                                                                        
 const url = "mongodb+srv://admin:%23admin4webtech@webtechprojectstockmark.htbou8u.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
- 
-
+ async function run_login(email,password){
+    try{
+        await client.connect();
+        const record=await client.db("Stockmarket").collection("userlist").findOne({email:email});
+        console.log(record);
+        if(record){
+            console.log('userfound')
+            if(password==record.passwd){
+                console.log('succesful login');
+                return{login:true,message:'user login succesful'};
+            }
+            else{
+                console.log('wrong passwd')
+                return{login:false,message:'user id and password dont match'};
+            }
+        }
+        else{
+            console.log('user not found')
+            return{login:false,message:'user email is not present pls signup'}
+        }
+    }
+    catch(error){
+        console.error('error during login',error.message);
+    }
+    finally{
+        await client.close();
+    }
+ }
                       
  async function run_signup(personDocument) {
     try {
         // Connect to the Atlas cluster stockmarket and the collection userlist inside it
          await client.connect();
+         
          
         //  password="gojover";
         //  const hashedPassword = await bcrypt.hash(password, 10);
@@ -61,4 +88,5 @@ async function checkEmailExists(client,email){
 
 module.exports={
     run_signup,
+    run_login,
 };
