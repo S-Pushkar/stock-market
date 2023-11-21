@@ -94,7 +94,7 @@
 	margin-left:1em;
 }
 .outDisp{
-	z-index:;
+	/* z-index:; */
 	margin-left:1em;
 	width: 55em;
 	overflow:hidden
@@ -149,4 +149,14 @@
   border: 1px solid white;
   font-weight: normal;
   margin-bottom: 2em;
+}
+
+.aboutp-2
+{
+	background-color:black;
+  border: 1px solid white;
+  font-weight: normal;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  margin-top: 2em;
 }

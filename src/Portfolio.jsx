@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PageContext } from './App';
 import { useStocks } from './StockContext';
+import './App.css';
 
 export default function Portfolio() {
     const {log, setLog, currentPage, setCurrentPage} = useContext(PageContext);
@@ -43,8 +44,11 @@ export default function Portfolio() {
             <p className="text-red-500">{errorMessage}</p>
             <h1 className="text-[rgb(212,195,87)] mt-4 mb-2 text-sm lg:text-lg font-bold">PORTFOLIO</h1>
             <div>
-                <h2>Your Stocks</h2>
-                <p>{userStocks}</p>
+                <h2 className='text-blue-500 text-xl'>Your Stocks for Email id: {userEmail}</h2>
+                {/* <p>{userStocks}</p> */}
+                <ul>
+                  {userStocks.map((stock, index) => ( <li key={index} className='aboutp-2'>{stock}</li> ))}
+                </ul>
                 <button onClick={() => finishTrade(userStocks,userEmail)}>Finish Trade</button>
             </div>
         
